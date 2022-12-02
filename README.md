@@ -5,9 +5,9 @@ A simple digit recognition demo using [keras](https://www.tensorflow.org/overvie
 
 It uses [streamlit-drawable-canvas](https://github.com/andfanilo/streamlit-drawable-canvas) for drawing on canvas.
 
-![Screenshot 01](Screenshot 01.png)
+<img src='https://github.com/jrreda/streamlit-drawable-mnist/blob/main/Screenshot%2001.png'>
 
-![Screenshot 02](Screenshot 02.png)
+<img src='https://github.com/jrreda/streamlit-drawable-mnist/blob/main/Screenshot%2002.png'>
 
 [streamlit](https://www.streamlit.io/) is an open-source app framework, which is the easiest way for data scientists and machine learning engineers to create beautiful, performant apps. All in pure Python, no longer fiddling with javascript.
 
