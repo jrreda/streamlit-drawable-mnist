@@ -16,6 +16,7 @@ st.title("MNIST Digit Recognizer Customizable MLP")
 ### Model Hyperprameters
 num_neurons = st.sidebar.slider("Number of neurons in hidden layer", 1, 128)
 num_epochs = st.sidebar.slider("Number of epoches", 1, 64)
+num_hidden = st.sidebar.slider("Number of hidden layers", 1, 10)
 activation_fn = st.sidebar.selectbox("Activation function",
     ('relu', 'tanh', 'sigmoid', 'softmax', 'softplus',
     'softsign', 'selu', 'elu', 'exponential'))
@@ -36,11 +37,12 @@ X_train = X_train / 255.0
 X_test  = X_test / 255.0
 
 ## Create the model
-model = Sequential([
-    Flatten(input_shape=(28, 28)),
-    Dense(num_neurons, activation_fn),
-    Dense(10, activation='softmax')
-])
+model = Sequential()
+model.add(Flatten(input_shape=(28, 28)))
+for i in range(num_hidden):
+    model.add(Dense(num_neurons, activation_fn))
+model.add(Dense(10, activation='softmax'))
+
 # Compile the model
 model.compile(optimizer=optimizer_c, loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 
